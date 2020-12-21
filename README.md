@@ -1,3 +1,19 @@
+## My Notes
+
+DLL exposed methods:
+- BrokerAccount
+- BrokerAsset
+- BrokerBuy
+- BrokerCommand
+- BrokerHTTP
+- BrokerHistory2
+- BrokerLogin
+- BrokerOpen
+- BrokerSell
+- BrokerStop
+- BrokerTime
+- BrokerTrade
+
 ## IG Zorro Plugin
 
 This a plugin for [Zorro](https://zorro-trader.com/) which lets you trade with [IG](http://www.ig.com). It implements the [Zorro-Broker-API](http://www.zorro-trader.com/manual/en/brokerplugin.htm).
