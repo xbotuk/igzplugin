@@ -1,18 +1,23 @@
 ## My Notes
 
-DLL exposed methods:
-- BrokerAccount
-- BrokerAsset
-- BrokerBuy
-- BrokerCommand
-- BrokerHTTP
-- BrokerHistory2
-- BrokerLogin
-- BrokerOpen
-- BrokerSell
-- BrokerStop
-- BrokerTime
-- BrokerTrade
+DLL Exports igzorrobridge.cpp (mostly via DllCallHandler.cpp)
+- BrokerOpen(char *Name, FARPROC fpError, FARPROC fpProgress)
+- BrokerLogin(const char *User,	const char *Pwd, const char *Type, char *Accounts)
+- BrokerTime(DATE *pTimeUTC)
+- BrokerAccount(const char *Account, double *pBalance, double *pTradeVal, double *pMarginVal)
+- BrokerAsset(char* Asset, double *pPrice, double *pSpread, double *pVolume, double *pPip, double *pPipCost, double *pLotAmount, double *pMarginCost, double *pRollLong, double *pRollShort)
+- BrokerHistory2(const char *Asset, const DATE tStart, const DATE tEnd, const int nTickMinutes, const int nTicks, T6 *ticks)
+- BrokerBuy(const char *Asset, int nAmount, double dStopDist, double *pPrice)
+- BrokerSell(const int nTradeID, const int nAmount)
+- BrokerStop(const int nTradeID, const double dStop)
+- BrokerTrade(const int nTradeID, double *pOpen, double *pClose, double *pRoll, double *pProfit)
+- BrokerHTTP(FARPROC fpSend, FARPROC fpStatus, FARPROC fpResult, FARPROC fpFree)
+- BrokerCommand(int nCommand, DWORD dwParameter)
+
+DllCallHandler.cpp (not exposed via DLL)
+- BrokerLogout()
+- SubscribeAsset(const char* Asset)
+- SetOrderText(const char *orderText)
 
 ## IG Zorro Plugin
 
